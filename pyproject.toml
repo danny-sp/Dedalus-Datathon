@@ -1,0 +1,21 @@
+[project]
+name = "dedalus-datathon"
+version = "0.1.0"
+description = "Proyecto para el Datathon de Dedalus: Análisis de datos de salud."
+readme = "README.md"
+requires-python = ">=3.10"
+
+authors = [
+    {name = "Belén Huertas Ruiz", email = "Belen.Huertas@alu.uclm.es"},
+    {name = "Lucía Sánchez-Chiquito Gómez", email = "Lucia.Sanchez73@alu.uclm.es"},
+    {name = "Carlos Naranjo Calderón", email = "Carlos.Naranjo1@alu.uclm.es"},
+    {name = "Daniel Sánchez Castro", email = "Daniel.Sanchez55@alu.uclm.es"}
+]
+
+dependencies = [
+    "black>=26.3.1",
+    "ipykernel>=7.2.0",
+    "isort>=8.0.1",
+    "matplotlib>=3.10.8",
+    "pandas>=2.3.3",
+]
