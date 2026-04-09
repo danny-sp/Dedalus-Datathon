@@ -27,4 +27,5 @@ dependencies = [
     "matplotlib>=3.10.8",
     "pandas>=2.3.3",
     "sqlalchemy>=2.0.49",
+    "streamlit>=1.56.0",
 ]
