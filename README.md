@@ -4,7 +4,31 @@ Repositorio para Datathon de Dedalus 2026 CLM: https://www.dedalushackathon.com/
 
 Este proyecto implementa un agente conversacional inteligente capaz de realizar consultas precisas a una base de datos de historia clínica, asistido por una capa de metacognición para comprender conceptos clínicos complejos.
 
-## Instalación de dependencias
+## Requisitos Previos: Instalación de Ollama
+
+El agente utiliza modelos de lenguaje locales mediatos por **Ollama**. Es necesario tenerlo instalado y descargar el modelo específico utilizado por el proyecto (`kimi-k2.5:cloud`). Puedes usar cualquier otro modelo descargado cambiando el parametro `model` en `agent.py`.
+
+### En Windows
+
+1. Descarga el instalador desde la [página oficial de Ollama](https://ollama.com/download/windows).
+2. Ejecuta el archivo `.exe` para finalizar la instalación.
+3. Abre una terminal (PowerShell o CMD) y descarga el modelo ejecutando:
+   ```bash
+   ollama pull kimi-k2.5:cloud
+   ```
+
+### En Linux
+
+1. Abre tu terminal e instala Ollama con el siguiente comando:
+   ```bash
+   curl -fsSL https://ollama.com/install.sh | sh
+   ```
+2. Una vez finalizada la instalación, inicia el servicio (si no arranca solo) y descarga el modelo:
+   ```bash
+   ollama pull kimi-k2.5:cloud
+   ```
+
+## Instalación de dependencias en Python
 
 ### Usando `uv` (recomendado)
 
@@ -24,6 +48,7 @@ pip install -e .
 ## Inicialización de Base de Datos
 
 Antes de ejecutar la aplicación, debes generar la base de datos `hospital.db` a partir de los datos `csv` proporcionados:
+
 ```bash
 uv run python setup_db.py
 ```
@@ -47,8 +72,3 @@ Si prefieres probar el agente directamente desde tu terminal interactiva:
 ```bash
 uv run python main.py cli
 ```
-
-## Características Clave
-- **Motor LangChain & Local LLM**: Emplea base de conocimientos médica generada por un modelo local (vía Ollama) evitando fugas de privacidad.
-- **Razonamiento Meta-Cognitivo**: El modelo detiene la ejecución automática en caso de ambigüedad médica para buscar clarificaciones (ej. ajustar umbrales de hemoglobina, plaquetas).
-- **Traducción NLU a SQL**: Permite a profesionales clínicos interrogar datos en lenguaje fluido, generando sentencias altamente precisas.
