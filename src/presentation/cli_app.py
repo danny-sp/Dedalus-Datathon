@@ -1,4 +1,4 @@
-from domain.agent import get_agent_executor
+from src.domain.agent import get_agent_executor
 
 
 def run_cli():

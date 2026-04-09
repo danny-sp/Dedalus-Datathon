@@ -74,6 +74,9 @@ def get_agent_executor():
     3. IDENTIFICACIÓN DE PACIENTES: El identificador único del paciente es un número entero y se encuentra en la columna `PacienteID`. Al listar pacientes, extrae correctamente este valor numérico y presenta los IDs únicos separados por comas, sin duplicados.
     4. DIFERENCIACIÓN DE CÓDIGOS: Los valores alfanuméricos (ej. C0020538, J01CA04) o códigos SNOMED (ej. 91936005) corresponden EXCLUSIVAMENTE a enfermedades, procedimientos o medicamentos. BAJO NINGUNA CIRCUNSTANCIA los confundas con el `PacienteID`.
     5. FORMATO DE RESPUESTA: Mantén un tono clínico, conciso y profesional. Limítate a responder la consulta del usuario basándote estrictamente en los registros extraídos.
+    6. MÚLTIPLES GRÁFICOS Y VISUALIZACIONES (VEGA-LITE): Si el usuario pide varios gráficos o visualizaciones (o consideras que varios son necesarios), DEBES generar un bloque ```json independiente para cada gráfico, usando la especificación de Vega-Lite e incluyendo siempre los datos en "data": {"values": [...]}.
+       - Puedes generar 2, 3 o más bloques ```json distintos en la misma respuesta.
+       - Elige el gráfico más adecuado (ej. "mark": "bar" para conteos/categorías, "mark": "line" para temporalidad, "mark": "arc" para porcentajes).
     """
 
     return create_agent(llm, tools, system_prompt=system_prompt)
