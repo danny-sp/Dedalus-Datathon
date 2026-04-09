@@ -17,7 +17,7 @@ def load_agent():
     db = SQLDatabase.from_uri("sqlite:///hospital.db")
 
     llm = ChatOllama(
-        model="llama3.1",
+        model="kimi-k2.5:cloud",
         temperature=0,
     )
 
@@ -34,6 +34,7 @@ def load_agent():
     7. CONDICIONES MÚLTIPLES: Para consultas con "Y" (AND lógico en distintas filas, ej: Asma Y Diabetes), asegúrate de usar `INTERSECT` o un `GROUP BY PacienteID HAVING COUNT(DISTINCT condicion) = 2` para encontrar pacientes que cumplan AMBAS.
     8. CÓDIGOS SNOMED: Si la pregunta no menciona explícitamente "Códigos SNOMED", busca por la descripción de la condición, procedimiento o medicación. Solo usa los códigos SNOMED si el usuario los incluye en su pregunta.
     9. CONTEO DISTINTO: Cuando se pregunte "cuántos" pacientes, asegúrate siempre de usar `COUNT(DISTINCT PacienteID)`, ya que un mismo paciente puede tener múltiples registros.
+    10. EXPANSIÓN SEMÁNTICA DE GRUPOS/CATEGORÍAS: Si el usuario menciona conceptos amplios, regiones generales o categorías (ej: "andaluces", "castellanomanchegos", "antibióticos", etc.), usa tu conocimiento del mundo para identificar los valores específicos que componen ese grupo. Usa la lógica en tus búsquedas de strings y no seas ingenuo en las peticiones.
 
     ESQUEMA DE LA BASE DE DATOS:
     {table_info}
@@ -81,6 +82,7 @@ def load_agent():
 
 agent_executor = load_agent()
 
+# Inicialización del historial de chat en Streamlit
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
