@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import datetime
 
 import streamlit as st
 
@@ -21,6 +22,7 @@ def load_agent():
 
 agent_executor = load_agent()
 
+
 def _build_conversation_title(messages, fallback):
     """Crea un titulo corto a partir del primer mensaje del usuario."""
     for msg in messages:
@@ -36,7 +38,7 @@ def _initialize_chat_state():
         st.session_state.conversations = [
             {
                 "id": "conv_1",
-                "title": "Conversacion 1",
+                "title": "Conversación 1",
                 "created_at": datetime.now().strftime("%d/%m %H:%M"),
                 "folder_id": "root",
                 "messages": [],
@@ -54,18 +56,20 @@ def _initialize_chat_state():
             conv["id"] for conv in st.session_state.conversations
         ]
     if "active_conversation_id" not in st.session_state:
-        st.session_state.active_conversation_id = st.session_state.conversations[0]["id"]
+        st.session_state.active_conversation_id = st.session_state.conversations[0][
+            "id"
+        ]
 
 
 def _get_active_conversation():
-    """Obtiene la conversacion activa o crea una nueva si no existe."""
+    """Obtiene la conversación activa o crea una nueva si no existe."""
     for conv in st.session_state.conversations:
         if conv["id"] == st.session_state.active_conversation_id:
             return conv
 
     new_conv = {
         "id": f"conv_{len(st.session_state.conversations) + 1}",
-        "title": f"Conversacion {len(st.session_state.conversations) + 1}",
+        "title": f"Conversación {len(st.session_state.conversations) + 1}",
         "created_at": datetime.now().strftime("%d/%m %H:%M"),
         "folder_id": "root",
         "messages": [],
@@ -84,7 +88,7 @@ def _get_folder_name(folder_id):
 
 
 def _move_active_conversation(step):
-    """Mueve la conversacion activa arriba o abajo en el historial."""
+    """Mueve la conversación activa arriba o abajo en el historial."""
     conv_id = st.session_state.active_conversation_id
     order = st.session_state.conversation_order
     if conv_id not in order:
@@ -94,6 +98,27 @@ def _move_active_conversation(step):
     new_idx = idx + step
     if 0 <= new_idx < len(order):
         order[idx], order[new_idx] = order[new_idx], order[idx]
+
+
+def _delete_conversation(conv_id):
+    """Elimina una conversación y actualiza el estado."""
+    st.session_state.conversations = [c for c in st.session_state.conversations if c["id"] != conv_id]
+    if conv_id in st.session_state.conversation_order:
+        st.session_state.conversation_order.remove(conv_id)
+    
+    if not st.session_state.conversations:
+        new_conv = {
+            "id": f"conv_{int(datetime.now().timestamp())}",
+            "title": "Conversación 1",
+            "created_at": datetime.now().strftime("%d/%m %H:%M"),
+            "folder_id": "root",
+            "messages": [],
+        }
+        st.session_state.conversations.append(new_conv)
+        st.session_state.conversation_order.append(new_conv["id"])
+        st.session_state.active_conversation_id = new_conv["id"]
+    elif st.session_state.active_conversation_id == conv_id:
+        st.session_state.active_conversation_id = st.session_state.conversation_order[0]
 
 
 _initialize_chat_state()
@@ -116,12 +141,12 @@ st.markdown(
 with st.sidebar:
     st.subheader("Historial de conversaciones")
 
-    if st.button("+ Nueva conversacion", use_container_width=True):
+    if st.button("+ Nueva conversación", use_container_width=True):
         new_id = f"conv_{len(st.session_state.conversations) + 1}"
         st.session_state.conversations.append(
             {
                 "id": new_id,
-                "title": f"Conversacion {len(st.session_state.conversations) + 1}",
+                "title": f"Conversación {len(st.session_state.conversations) + 1}",
                 "created_at": datetime.now().strftime("%d/%m %H:%M"),
                 "folder_id": "root",
                 "messages": [],
@@ -132,25 +157,31 @@ with st.sidebar:
         st.rerun()
 
     st.caption("Organiza tus chats en carpetas")
-    new_folder_name = st.text_input("Nueva carpeta", placeholder="Ej: Alergias")
-    if st.button("Crear carpeta", use_container_width=True):
-        folder_name = new_folder_name.strip()
-        existing_names = {f["name"].lower() for f in st.session_state.folders}
-        if folder_name and folder_name.lower() not in existing_names:
-            st.session_state.folders.append(
-                {
-                    "id": f"folder_{len(st.session_state.folders) + 1}",
-                    "name": folder_name,
-                }
-            )
-            st.rerun()
+    with st.form("new_folder_form", clear_on_submit=True):
+        new_folder_name = st.text_input("Nueva carpeta", placeholder="Ej: Alergias")
+        if st.form_submit_button("Crear carpeta", use_container_width=True):
+            folder_name = new_folder_name.strip()
+            existing_names = {f["name"].lower() for f in st.session_state.folders}
+            if folder_name and folder_name.lower() not in existing_names:
+                new_folder_id = f"folder_{len(st.session_state.folders) + 1}"
+                st.session_state.folders.append(
+                    {
+                        "id": new_folder_id,
+                        "name": folder_name,
+                    }
+                )
+                active_conv = _get_active_conversation()
+                active_conv["folder_id"] = new_folder_id
+                st.rerun()
 
     active_conversation_preview = _get_active_conversation()
     folder_options = [folder["id"] for folder in st.session_state.folders]
     selected_folder_id = st.selectbox(
-        "Carpeta de la conversacion activa",
+        "Carpeta de la conversación activa",
         options=folder_options,
-        index=folder_options.index(active_conversation_preview.get("folder_id", "root")),
+        index=folder_options.index(
+            active_conversation_preview.get("folder_id", "root")
+        ),
         format_func=_get_folder_name,
     )
     if selected_folder_id != active_conversation_preview.get("folder_id", "root"):
@@ -181,14 +212,21 @@ with st.sidebar:
 
                 label = f"{conv['title']} · {conv['created_at']}"
                 is_active = conv["id"] == st.session_state.active_conversation_id
-                if st.button(
-                    label,
-                    key=f"history_{conv['id']}",
-                    use_container_width=True,
-                    type="primary" if is_active else "secondary",
-                ):
-                    st.session_state.active_conversation_id = conv["id"]
-                    st.rerun()
+                
+                col_btn, col_del = st.columns([0.85, 0.15])
+                with col_btn:
+                    if st.button(
+                        label,
+                        key=f"history_{conv['id']}",
+                        use_container_width=True,
+                        type="primary" if is_active else "secondary",
+                    ):
+                        st.session_state.active_conversation_id = conv["id"]
+                        st.rerun()
+                with col_del:
+                    if st.button("🗑️", key=f"del_{conv['id']}", help="Eliminar conversación"):
+                        _delete_conversation(conv["id"])
+                        st.rerun()
     st.markdown("</div>", unsafe_allow_html=True)
 
 active_conversation = _get_active_conversation()
@@ -232,7 +270,7 @@ if prompt := st.chat_input("Escribe tu consulta médica aquí..."):
     # Agregar la pregunta al historial y mostrarla
     messages.append({"role": "user", "content": prompt})
 
-    default_title = active_conversation["title"].startswith("Conversacion ")
+    default_title = active_conversation["title"].startswith("Conversación ")
     if default_title:
         active_conversation["title"] = _build_conversation_title(
             messages,
