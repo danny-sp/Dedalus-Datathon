@@ -99,3 +99,56 @@ PacienteID,Fecha_diagnostico,Codigo_SNOMED,Descripcion
 20,2020-11-03,91935009,Alergia al pelo de gato
 30,2021-05-27,91935009,Alergia al pelo de gato
 9,2017-12-15,91932006,Alergia a los mariscos
+35,2020-10-22,91933007,Alergia a los frutos secos
+36,2018-10-10,91933007,Alergia a los frutos secos
+37,2020-03-17,91931005,Alergia a la leche
+38,2020-10-20,91936005,Alergia al polen
+38,2020-05-19,91930004,Alergia a los ácaros del polvo
+39,2019-08-17,300914000,Alergia a la aspirina
+40,2018-05-11,91936005,Alergia al polen
+41,2024-05-01,91932006,Alergia a los mariscos
+41,2016-04-05,300913006,Alergia a la penicilina
+42,2019-06-03,300914000,Alergia a la aspirina
+43,2019-06-28,91930004,Alergia a los ácaros del polvo
+44,2024-08-10,91932006,Alergia a los mariscos
+46,2019-04-30,91934008,Alergia a la picadura de abeja
+48,2024-08-06,300914000,Alergia a la aspirina
+49,2019-02-21,300914000,Alergia a la aspirina
+50,2018-05-08,91932006,Alergia a los mariscos
+50,2019-02-09,91931005,Alergia a la leche
+52,2018-09-17,91930004,Alergia a los ácaros del polvo
+54,2020-06-04,91932006,Alergia a los mariscos
+55,2020-01-28,91935009,Alergia al pelo de gato
+56,2023-12-25,300914000,Alergia a la aspirina
+57,2018-06-28,91934008,Alergia a la picadura de abeja
+58,2021-04-21,91933007,Alergia a los frutos secos
+58,2017-09-25,300913006,Alergia a la penicilina
+60,2016-05-19,300913006,Alergia a la penicilina
+64,2024-12-26,91930004,Alergia a los ácaros del polvo
+66,2020-11-28,91933007,Alergia a los frutos secos
+67,2020-01-17,300913006,Alergia a la penicilina
+68,2019-01-05,91933007,Alergia a los frutos secos
+70,2018-09-29,300913006,Alergia a la penicilina
+71,2022-06-27,300913006,Alergia a la penicilina
+72,2017-07-01,414285001,Alergia al látex
+73,2022-10-08,91932006,Alergia a los mariscos
+75,2016-02-15,91935009,Alergia al pelo de gato
+78,2019-12-21,91931005,Alergia a la leche
+79,2020-09-10,91931005,Alergia a la leche
+80,2021-12-16,91936005,Alergia al polen
+80,2022-07-23,91932006,Alergia a los mariscos
+81,2024-05-21,414285001,Alergia al látex
+82,2024-07-24,91936005,Alergia al polen
+83,2017-07-25,91933007,Alergia a los frutos secos
+85,2024-05-30,300913006,Alergia a la penicilina
+87,2018-10-18,300914000,Alergia a la aspirina
+88,2024-01-15,91931005,Alergia a la leche
+90,2019-09-26,91933007,Alergia a los frutos secos
+92,2019-06-06,91933007,Alergia a los frutos secos
+92,2023-07-15,91930004,Alergia a los ácaros del polvo
+94,2022-10-04,91930004,Alergia a los ácaros del polvo
+96,2020-03-08,300913006,Alergia a la penicilina
+97,2016-08-10,300914000,Alergia a la aspirina
+99,2023-04-13,91930004,Alergia a los ácaros del polvo
+100,2018-05-16,91932006,Alergia a los mariscos
+100,2024-07-25,300913006,Alergia a la penicilina
