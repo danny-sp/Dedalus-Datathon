@@ -2,11 +2,11 @@ from src.domain.agent import get_agent_executor
 
 
 def run_cli():
-    print("Iniciando la base de datos y los modelos de IA...")
+    print("Iniciando Chismoso...")
     agent_executor = get_agent_executor()
 
     print("\n" + "=" * 50)
-    print("--- Agente Médico Activo (CLI) ---")
+    print("--- Chismoso Activo (CLI) ---")
     print("Escribe 'salir', 'exit' o 'quit' para terminar el chat.")
     print("=" * 50 + "\n")
 
@@ -29,7 +29,7 @@ def run_cli():
                     and message.type == "ai"
                     and message.content
                 ):
-                    print(f"Asistente: {message.content}")
+                    print(f"Chismoso: {message.content}")
             print()  # Salto de línea por estética
 
         except KeyboardInterrupt:
