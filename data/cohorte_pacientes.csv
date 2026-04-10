@@ -1,34 +1,101 @@
-PacienteID,Genero,Edad,Provincia,Latitud,Longitud
-1,Masculino,21,Almería,36.8416,-2.4637
-2,Masculino,84,Huelva,37.2614,-6.9447
-3,Femenino,59,Córdoba,37.8847,-4.7792
-4,Femenino,78,Granada,37.1773,-3.5986
-5,Femenino,31,Málaga,36.7194,-4.42
-6,Femenino,47,Córdoba,37.8847,-4.7792
-7,Masculino,35,Almería,36.8416,-2.4637
-8,Masculino,19,Granada,37.1773,-3.5986
-9,Femenino,30,Huelva,37.2614,-6.9447
-10,Femenino,29,Huelva,37.2614,-6.9447
-11,Masculino,40,Málaga,36.7194,-4.42
-12,Femenino,19,Granada,37.1773,-3.5986
-13,Femenino,56,Almería,36.8416,-2.4637
-14,Femenino,63,Córdoba,37.8847,-4.7792
-15,Masculino,29,Málaga,36.7194,-4.42
-16,Masculino,45,Granada,37.1773,-3.5986
-17,Masculino,43,Sevilla,37.3886,-5.9823
-18,Masculino,44,Málaga,36.7194,-4.42
-19,Femenino,73,Córdoba,37.8847,-4.7792
-20,Masculino,62,Almería,36.8416,-2.4637
-21,Masculino,36,Córdoba,37.8847,-4.7792
-22,Femenino,27,Málaga,36.7194,-4.42
-23,Masculino,41,Granada,37.1773,-3.5986
-24,Masculino,35,Almería,36.8416,-2.4637
-25,Masculino,63,Córdoba,37.8847,-4.7792
-26,Masculino,80,Huelva,37.2614,-6.9447
-27,Masculino,71,Almería,36.8416,-2.4637
-28,Femenino,38,Málaga,36.7194,-4.42
-29,Femenino,21,Málaga,36.7194,-4.42
-30,Femenino,41,Málaga,36.7194,-4.42
-31,Masculino,50,Sevilla,37.3886,-5.9823
-32,Femenino,67,Huelva,37.2614,-6.9447
-33,Masculino,28,Córdoba,37.8847,-4.7792
+PacienteID,Genero,Edad,Provincia,nombre,apellido,telefono
+1.0,Masculino,21.0,Almería,pepe,navarrete,+34 660268726
+2.0,Masculino,84.0,Huelva,ildefonso,leal,+34 699127361
+3.0,Femenino,59.0,Córdoba,vanesa,casanovas,+34 630962867
+4.0,Femenino,78.0,Granada,ileana,pi,+34 639535091
+5.0,Femenino,31.0,Málaga,teresita,garriga,+34 615653508
+6.0,Femenino,47.0,Córdoba,graciela,valderrama,+34 617268216
+7.0,Masculino,35.0,Almería,bautista,casas,+34 682421782
+8.0,Masculino,19.0,Granada,faustino,menendez,+34 698389026
+9.0,Femenino,30.0,Huelva,carmelita,carballo,+34 606154066
+10.0,Femenino,29.0,Huelva,candela,lucena,+34 637466652
+11.0,Masculino,40.0,Málaga,julian,quintero,+34 606311808
+12.0,Femenino,19.0,Granada,isa,aramburu,+34 603437986
+13.0,Femenino,56.0,Almería,piedad,peinado,+34 627873356
+14.0,Femenino,63.0,Córdoba,encarnita,francisco,+34 640249303
+15.0,Masculino,29.0,Málaga,borja,patino,+34 687968946
+16.0,Masculino,45.0,Granada,cayetano,marmol,+34 631519031
+17.0,Masculino,43.0,Sevilla,zacarias,pla,+34 633264364
+18.0,Masculino,44.0,Málaga,lucho,echevarria,+34 633805902
+19.0,Femenino,73.0,Córdoba,ofelia,munoz,+34 682962505
+20.0,Masculino,62.0,Almería,paco,gomez,+34 648722785
+21.0,Masculino,36.0,Córdoba,valero,barragan,+34 671727111
+22.0,Femenino,27.0,Málaga,maria,fortuny,+34 699516673
+23.0,Masculino,41.0,Granada,hernando,borrell,+34 639597486
+24.0,Masculino,35.0,Almería,marc,novoa,+34 663838402
+25.0,Masculino,63.0,Córdoba,raul,samper,+34 610835848
+26.0,Masculino,80.0,Huelva,ernesto,valbuena,+34 606965650
+27.0,Masculino,71.0,Almería,fito,abril,+34 646255862
+28.0,Femenino,38.0,Málaga,teodora,guzman,+34 682047396
+29.0,Femenino,21.0,Málaga,xiomara,herrera,+34 643151404
+30.0,Femenino,41.0,Málaga,herminia,garzon,+34 609648913
+31.0,Masculino,50.0,Sevilla,maximiliano,berrocal,+34 657616431
+32.0,Femenino,67.0,Huelva,ainoa,patino,+34 670159743
+33.0,Masculino,28.0,Córdoba,olegario,nicolau,+34 667439911
+34.0,Femenino,49.0,Ourense,xiomara,roig,+34 654321508
+35.0,Femenino,67.0,Almería,morena,rosado,+34 654953268
+36.0,Femenino,41.0,Pontevedra,loreto,alsina,+34 669124956
+37.0,Masculino,32.0,Santa Cruz de Tenerife,jorge,valentin,+34 692711254
+38.0,Femenino,53.0,Cáceres,olivia,gimenez,+34 627694032
+39.0,Femenino,35.0,Lleida,liliana,porta,+34 697948598
+40.0,Femenino,16.0,Cáceres,arcelia,giner,+34 641621144
+41.0,Masculino,17.0,Ourense,aristides,galiano,+34 637597758
+42.0,Femenino,60.0,Guadalajara,maura,pedro,+34 696090110
+43.0,Femenino,25.0,Girona,albina,gomez,+34 640322465
+44.0,Masculino,73.0,Cuenca,melchor,canals,+34 667195557
+45.0,Masculino,53.0,Melilla,federico,andres,+34 630231547
+46.0,Masculino,33.0,León,adelardo,minguez,+34 668069416
+47.0,Femenino,41.0,Salamanca,berta,benet,+34 629698060
+48.0,Femenino,81.0,Tarragona,gertrudis,manso,+34 677826325
+49.0,Femenino,31.0,Barcelona,amalia,cazorla,+34 628780399
+50.0,Femenino,52.0,Ourense,teresa,gallart,+34 679740239
+51.0,Masculino,54.0,La Rioja,fito,barriga,+34 676333630
+52.0,Masculino,56.0,Huelva,jose_francisco,diez,+34 655945638
+53.0,Masculino,90.0,Castellón,isaac,soriano,+34 613763131
+54.0,Femenino,52.0,Teruel,catalina,carmona,+34 670052898
+55.0,Masculino,32.0,Soria,chucho,priego,+34 637964548
+56.0,Masculino,51.0,Valladolid,alex,salmeron,+34 686727036
+57.0,Masculino,84.0,Melilla,marciano,paez,+34 610268514
+58.0,Masculino,86.0,La Rioja,manu,parejo,+34 616733820
+59.0,Femenino,67.0,Girona,nilda,luz,+34 623569044
+60.0,Masculino,40.0,Madrid,jose_mari,morcillo,+34 649457515
+61.0,Masculino,77.0,La Rioja,baltasar,rossello,+34 632671554
+62.0,Femenino,30.0,Girona,fabiana,domenech,+34 699378833
+63.0,Masculino,27.0,Ceuta,blas,blanes,+34 694108980
+64.0,Femenino,30.0,Toledo,eva_maria,tirado,+34 627520318
+65.0,Femenino,64.0,Zaragoza,lourdes,daza,+34 684504004
+66.0,Femenino,83.0,Ciudad Real,anna,ortiz,+34 610807960
+67.0,Masculino,89.0,Gipuzkoa,valero,castello,+34 695662182
+68.0,Femenino,87.0,Sevilla,trini,amador,+34 640704267
+69.0,Masculino,54.0,Segovia,sosimo,amoros,+34 634598953
+70.0,Femenino,43.0,Lleida,felicia,martin,+34 656822351
+71.0,Masculino,75.0,Lugo,ruy,reig,+34 605394179
+72.0,Femenino,50.0,Santa Cruz de Tenerife,paula,avila,+34 634293020
+73.0,Masculino,54.0,Ourense,maximiano,cisneros,+34 640104976
+74.0,Femenino,72.0,Córdoba,eva,valencia,+34 631503152
+75.0,Femenino,17.0,Ceuta,manuela,barreda,+34 600262627
+76.0,Femenino,23.0,Cádiz,eulalia,sala,+34 615294625
+77.0,Femenino,66.0,Las Palmas,casandra,iniguez,+34 600310485
+78.0,Masculino,82.0,Las Palmas,valero,ordonez,+34 698478844
+79.0,Femenino,52.0,Lugo,clotilde,maza,+34 608147079
+80.0,Femenino,76.0,Navarra,guiomar,benet,+34 660327438
+81.0,Masculino,33.0,Valencia,david,gimenez,+34 693149677
+82.0,Femenino,31.0,Sevilla,ligia,duenas,+34 634731123
+83.0,Femenino,71.0,Cuenca,calixta,mesa,+34 644561736
+84.0,Masculino,58.0,Las Palmas,elpidio,gomez,+34 677437306
+85.0,Femenino,78.0,Córdoba,florina,aleman,+34 659086569
+86.0,Masculino,44.0,Lleida,haroldo,sacristan,+34 680709792
+87.0,Femenino,40.0,Córdoba,estela,carro,+34 660042247
+88.0,Femenino,45.0,Málaga,maria_fernanda,urrutia,+34 666536177
+89.0,Femenino,13.0,Lugo,lidia,maestre,+34 645773808
+90.0,Masculino,90.0,Las Palmas,natanael,conesa,+34 678647396
+91.0,Masculino,72.0,Sevilla,teobaldo,daza,+34 641444563
+92.0,Femenino,46.0,Pontevedra,evita,bernal,+34 664178564
+93.0,Masculino,29.0,Valladolid,adrian,valcarcel,+34 668982650
+94.0,Femenino,62.0,Murcia,maite,huertas,+34 622998824
+95.0,Masculino,52.0,Málaga,jose_antonio,porcel,+34 653676762
+96.0,Masculino,16.0,La Rioja,amor,miralles,+34 661723064
+97.0,Masculino,54.0,Segovia,leon,cuesta,+34 642543020
+98.0,Masculino,81.0,Zamora,antonio,prats,+34 687495932
+99.0,Masculino,68.0,Huesca,josep,marin,+34 673483696
+100.0,Masculino,81.0,Huesca,melchor,riera,+34 671821983
