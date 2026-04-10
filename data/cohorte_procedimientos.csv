@@ -1,101 +1,167 @@
 PacienteID,Fecha_inicio,Fecha_fin,Codigo_SNOMED,Descripcion,duracion
-6,2024-10-11,2024-10-13,303893007,Resonancia magnética cerebral,2 days
-13,2023-06-09,2023-06-12,241879003,Extracción de muela,3 days
-8,2023-09-08,2023-09-10,80146002,Cirugía de apendicitis,2 days
-4,2023-04-10,2023-04-14,303893007,Resonancia magnética cerebral,4 days
-9,2024-03-26,2024-03-31,80146002,Cirugía de apendicitis,5 days
-27,2025-01-23,2025-01-27,303893007,Resonancia magnética cerebral,4 days
-7,2024-04-07,2024-04-08,430193006,Sutura de herida,1 days
-22,2025-01-02,2025-01-04,430193006,Sutura de herida,2 days
-4,2023-07-21,2023-07-27,48387007,Colonoscopía,6 days
-4,2024-10-30,2024-11-02,430193006,Sutura de herida,3 days
-21,2023-05-12,2023-05-16,233604007,Ecografía abdominal,4 days
-16,2024-04-09,2024-04-16,430193006,Sutura de herida,7 days
-8,2024-11-27,2024-11-28,180325003,Vacunación contra la gripe,1 days
-26,2025-02-05,2025-02-11,80146002,Cirugía de apendicitis,6 days
-9,2024-01-12,2024-01-17,233604007,Ecografía abdominal,5 days
-22,2024-10-14,2024-10-17,399208008,Radiografía de tórax,3 days
-28,2025-02-15,2025-02-17,399439001,Cateterismo cardíaco,2 days
-22,2024-08-19,2024-08-24,241879003,Extracción de muela,5 days
-7,2024-07-12,2024-07-16,241879003,Extracción de muela,4 days
-5,2024-03-09,2024-03-15,399208008,Radiografía de tórax,6 days
-4,2024-10-10,2024-10-16,430193006,Sutura de herida,6 days
-5,2023-11-11,2023-11-16,80146002,Cirugía de apendicitis,5 days
-15,2023-04-25,2023-04-30,233604007,Ecografía abdominal,5 days
-4,2024-11-07,2024-11-10,48387007,Colonoscopía,3 days
-18,2023-09-09,2023-09-15,180325003,Vacunación contra la gripe,6 days
-14,2025-01-30,2025-02-04,399439001,Cateterismo cardíaco,5 days
-6,2024-12-23,2024-12-30,48387007,Colonoscopía,7 days
-30,2025-01-18,2025-01-24,399439001,Cateterismo cardíaco,6 days
-15,2024-03-29,2024-04-05,387713003,Electrocardiograma,7 days
-8,2023-08-27,2023-09-02,80146002,Cirugía de apendicitis,6 days
-9,2024-01-01,2024-01-05,430193006,Sutura de herida,4 days
-24,2023-09-06,2023-09-13,399208008,Radiografía de tórax,7 days
-11,2023-04-20,2023-04-24,399208008,Radiografía de tórax,4 days
-24,2023-12-09,2023-12-16,430193006,Sutura de herida,7 days
-7,2023-09-28,2023-09-29,430193006,Sutura de herida,1 days
-30,2023-05-22,2023-05-23,48387007,Colonoscopía,1 days
-1,2023-08-05,2023-08-10,430193006,Sutura de herida,5 days
-19,2023-05-09,2023-05-16,233604007,Ecografía abdominal,7 days
-17,2024-06-01,2024-06-07,180325003,Vacunación contra la gripe,6 days
-3,2023-09-23,2023-09-28,80146002,Cirugía de apendicitis,5 days
-21,2024-01-29,2024-02-03,241879003,Extracción de muela,5 days
-6,2023-11-26,2023-12-01,180325003,Vacunación contra la gripe,5 days
-10,2023-09-25,2023-09-30,303893007,Resonancia magnética cerebral,5 days
-22,2023-07-27,2023-07-30,399208008,Radiografía de tórax,3 days
-26,2024-07-26,2024-07-28,399208008,Radiografía de tórax,2 days
-22,2024-06-22,2024-06-26,180325003,Vacunación contra la gripe,4 days
-25,2023-09-19,2023-09-23,180325003,Vacunación contra la gripe,4 days
-24,2023-06-18,2023-06-24,303893007,Resonancia magnética cerebral,6 days
-19,2024-08-11,2024-08-15,399208008,Radiografía de tórax,4 days
-29,2025-02-08,2025-02-15,80146002,Cirugía de apendicitis,7 days
-27,2024-04-05,2024-04-10,233604007,Ecografía abdominal,5 days
-12,2023-04-17,2023-04-18,399208008,Radiografía de tórax,1 days
-19,2024-06-18,2024-06-25,399439001,Cateterismo cardíaco,7 days
-24,2024-01-02,2024-01-03,48387007,Colonoscopía,1 days
-29,2025-01-15,2025-01-22,303893007,Resonancia magnética cerebral,7 days
-21,2023-05-30,2023-06-03,48387007,Colonoscopía,4 days
-18,2024-09-09,2024-09-12,233604007,Ecografía abdominal,3 days
-5,2023-04-24,2023-04-25,399208008,Radiografía de tórax,1 days
-8,2024-10-02,2024-10-06,241879003,Extracción de muela,4 days
-12,2023-07-11,2023-07-18,399439001,Cateterismo cardíaco,7 days
-11,2023-04-18,2023-04-25,180325003,Vacunación contra la gripe,7 days
-29,2023-08-09,2023-08-15,387713003,Electrocardiograma,6 days
-16,2024-11-09,2024-11-11,399439001,Cateterismo cardíaco,2 days
-28,2024-07-19,2024-07-21,399439001,Cateterismo cardíaco,2 days
-30,2024-09-09,2024-09-13,399439001,Cateterismo cardíaco,4 days
-24,2024-12-28,2024-12-29,233604007,Ecografía abdominal,1 days
-21,2023-07-06,2023-07-10,303893007,Resonancia magnética cerebral,4 days
-3,2025-01-22,2025-01-26,233604007,Ecografía abdominal,4 days
-20,2024-10-23,2024-10-27,399208008,Radiografía de tórax,4 days
-26,2024-09-14,2024-09-20,387713003,Electrocardiograma,6 days
-10,2023-06-25,2023-06-26,399439001,Cateterismo cardíaco,1 days
-19,2024-03-30,2024-04-02,303893007,Resonancia magnética cerebral,3 days
-29,2025-01-26,2025-01-28,387713003,Electrocardiograma,2 days
-27,2025-02-18,2025-02-24,387713003,Electrocardiograma,6 days
-13,2025-02-05,2025-02-10,303893007,Resonancia magnética cerebral,5 days
-14,2024-09-01,2024-09-04,80146002,Cirugía de apendicitis,3 days
-20,2024-01-17,2024-01-19,430193006,Sutura de herida,2 days
-19,2024-03-14,2024-03-18,233604007,Ecografía abdominal,4 days
-17,2024-03-27,2024-03-28,80146002,Cirugía de apendicitis,1 days
-24,2023-08-23,2023-08-30,233604007,Ecografía abdominal,7 days
-15,2024-05-29,2024-06-05,399439001,Cateterismo cardíaco,7 days
-5,2023-07-06,2023-07-12,80146002,Cirugía de apendicitis,6 days
-11,2024-11-29,2024-12-03,303893007,Resonancia magnética cerebral,4 days
-28,2024-10-01,2024-10-07,180325003,Vacunación contra la gripe,6 days
-10,2024-02-24,2024-02-27,303893007,Resonancia magnética cerebral,3 days
-28,2023-12-23,2023-12-29,241879003,Extracción de muela,6 days
-22,2023-06-26,2023-06-29,430193006,Sutura de herida,3 days
-30,2023-10-16,2023-10-22,241879003,Extracción de muela,6 days
-17,2025-03-03,2025-03-07,241879003,Extracción de muela,4 days
-25,2024-01-15,2024-01-21,399439001,Cateterismo cardíaco,6 days
-29,2024-12-18,2024-12-22,233604007,Ecografía abdominal,4 days
-27,2023-04-28,2023-04-30,80146002,Cirugía de apendicitis,2 days
-1,2024-01-27,2024-02-03,303893007,Resonancia magnética cerebral,7 days
-7,2025-02-17,2025-02-24,241879003,Extracción de muela,7 days
-15,2024-06-30,2024-07-05,241879003,Extracción de muela,5 days
-10,2024-10-12,2024-10-19,241879003,Extracción de muela,7 days
-2,2024-05-09,2024-05-12,387713003,Electrocardiograma,3 days
-24,2024-05-04,2024-05-06,48387007,Colonoscopía,2 days
-30,2023-10-17,2023-10-19,180325003,Vacunación contra la gripe,2 days
-27,2024-05-01,2024-05-05,303893007,Resonancia magnética cerebral,4 days
+6,2024-10-11,2024-10-13,303893007,Resonancia magnética cerebral,2 days 00:00:00
+13,2023-06-09,2023-06-12,241879003,Extracción de muela,3 days 00:00:00
+8,2023-09-08,2023-09-10,80146002,Cirugía de apendicitis,2 days 00:00:00
+4,2023-04-10,2023-04-14,303893007,Resonancia magnética cerebral,4 days 00:00:00
+9,2024-03-26,2024-03-31,80146002,Cirugía de apendicitis,5 days 00:00:00
+27,2025-01-23,2025-01-27,303893007,Resonancia magnética cerebral,4 days 00:00:00
+7,2024-04-07,2024-04-08,430193006,Sutura de herida,1 days 00:00:00
+22,2025-01-02,2025-01-04,430193006,Sutura de herida,2 days 00:00:00
+4,2023-07-21,2023-07-27,48387007,Colonoscopía,6 days 00:00:00
+4,2024-10-30,2024-11-02,430193006,Sutura de herida,3 days 00:00:00
+21,2023-05-12,2023-05-16,233604007,Ecografía abdominal,4 days 00:00:00
+16,2024-04-09,2024-04-16,430193006,Sutura de herida,7 days 00:00:00
+8,2024-11-27,2024-11-28,180325003,Vacunación contra la gripe,1 days 00:00:00
+26,2025-02-05,2025-02-11,80146002,Cirugía de apendicitis,6 days 00:00:00
+9,2024-01-12,2024-01-17,233604007,Ecografía abdominal,5 days 00:00:00
+22,2024-10-14,2024-10-17,399208008,Radiografía de tórax,3 days 00:00:00
+28,2025-02-15,2025-02-17,399439001,Cateterismo cardíaco,2 days 00:00:00
+22,2024-08-19,2024-08-24,241879003,Extracción de muela,5 days 00:00:00
+7,2024-07-12,2024-07-16,241879003,Extracción de muela,4 days 00:00:00
+5,2024-03-09,2024-03-15,399208008,Radiografía de tórax,6 days 00:00:00
+4,2024-10-10,2024-10-16,430193006,Sutura de herida,6 days 00:00:00
+5,2023-11-11,2023-11-16,80146002,Cirugía de apendicitis,5 days 00:00:00
+15,2023-04-25,2023-04-30,233604007,Ecografía abdominal,5 days 00:00:00
+4,2024-11-07,2024-11-10,48387007,Colonoscopía,3 days 00:00:00
+18,2023-09-09,2023-09-15,180325003,Vacunación contra la gripe,6 days 00:00:00
+14,2025-01-30,2025-02-04,399439001,Cateterismo cardíaco,5 days 00:00:00
+6,2024-12-23,2024-12-30,48387007,Colonoscopía,7 days 00:00:00
+30,2025-01-18,2025-01-24,399439001,Cateterismo cardíaco,6 days 00:00:00
+15,2024-03-29,2024-04-05,387713003,Electrocardiograma,7 days 00:00:00
+8,2023-08-27,2023-09-02,80146002,Cirugía de apendicitis,6 days 00:00:00
+9,2024-01-01,2024-01-05,430193006,Sutura de herida,4 days 00:00:00
+24,2023-09-06,2023-09-13,399208008,Radiografía de tórax,7 days 00:00:00
+11,2023-04-20,2023-04-24,399208008,Radiografía de tórax,4 days 00:00:00
+24,2023-12-09,2023-12-16,430193006,Sutura de herida,7 days 00:00:00
+7,2023-09-28,2023-09-29,430193006,Sutura de herida,1 days 00:00:00
+30,2023-05-22,2023-05-23,48387007,Colonoscopía,1 days 00:00:00
+1,2023-08-05,2023-08-10,430193006,Sutura de herida,5 days 00:00:00
+19,2023-05-09,2023-05-16,233604007,Ecografía abdominal,7 days 00:00:00
+17,2024-06-01,2024-06-07,180325003,Vacunación contra la gripe,6 days 00:00:00
+3,2023-09-23,2023-09-28,80146002,Cirugía de apendicitis,5 days 00:00:00
+21,2024-01-29,2024-02-03,241879003,Extracción de muela,5 days 00:00:00
+6,2023-11-26,2023-12-01,180325003,Vacunación contra la gripe,5 days 00:00:00
+10,2023-09-25,2023-09-30,303893007,Resonancia magnética cerebral,5 days 00:00:00
+22,2023-07-27,2023-07-30,399208008,Radiografía de tórax,3 days 00:00:00
+26,2024-07-26,2024-07-28,399208008,Radiografía de tórax,2 days 00:00:00
+22,2024-06-22,2024-06-26,180325003,Vacunación contra la gripe,4 days 00:00:00
+25,2023-09-19,2023-09-23,180325003,Vacunación contra la gripe,4 days 00:00:00
+24,2023-06-18,2023-06-24,303893007,Resonancia magnética cerebral,6 days 00:00:00
+19,2024-08-11,2024-08-15,399208008,Radiografía de tórax,4 days 00:00:00
+29,2025-02-08,2025-02-15,80146002,Cirugía de apendicitis,7 days 00:00:00
+27,2024-04-05,2024-04-10,233604007,Ecografía abdominal,5 days 00:00:00
+12,2023-04-17,2023-04-18,399208008,Radiografía de tórax,1 days 00:00:00
+19,2024-06-18,2024-06-25,399439001,Cateterismo cardíaco,7 days 00:00:00
+24,2024-01-02,2024-01-03,48387007,Colonoscopía,1 days 00:00:00
+29,2025-01-15,2025-01-22,303893007,Resonancia magnética cerebral,7 days 00:00:00
+21,2023-05-30,2023-06-03,48387007,Colonoscopía,4 days 00:00:00
+18,2024-09-09,2024-09-12,233604007,Ecografía abdominal,3 days 00:00:00
+5,2023-04-24,2023-04-25,399208008,Radiografía de tórax,1 days 00:00:00
+8,2024-10-02,2024-10-06,241879003,Extracción de muela,4 days 00:00:00
+12,2023-07-11,2023-07-18,399439001,Cateterismo cardíaco,7 days 00:00:00
+11,2023-04-18,2023-04-25,180325003,Vacunación contra la gripe,7 days 00:00:00
+29,2023-08-09,2023-08-15,387713003,Electrocardiograma,6 days 00:00:00
+16,2024-11-09,2024-11-11,399439001,Cateterismo cardíaco,2 days 00:00:00
+28,2024-07-19,2024-07-21,399439001,Cateterismo cardíaco,2 days 00:00:00
+30,2024-09-09,2024-09-13,399439001,Cateterismo cardíaco,4 days 00:00:00
+24,2024-12-28,2024-12-29,233604007,Ecografía abdominal,1 days 00:00:00
+21,2023-07-06,2023-07-10,303893007,Resonancia magnética cerebral,4 days 00:00:00
+3,2025-01-22,2025-01-26,233604007,Ecografía abdominal,4 days 00:00:00
+20,2024-10-23,2024-10-27,399208008,Radiografía de tórax,4 days 00:00:00
+26,2024-09-14,2024-09-20,387713003,Electrocardiograma,6 days 00:00:00
+10,2023-06-25,2023-06-26,399439001,Cateterismo cardíaco,1 days 00:00:00
+19,2024-03-30,2024-04-02,303893007,Resonancia magnética cerebral,3 days 00:00:00
+29,2025-01-26,2025-01-28,387713003,Electrocardiograma,2 days 00:00:00
+27,2025-02-18,2025-02-24,387713003,Electrocardiograma,6 days 00:00:00
+13,2025-02-05,2025-02-10,303893007,Resonancia magnética cerebral,5 days 00:00:00
+14,2024-09-01,2024-09-04,80146002,Cirugía de apendicitis,3 days 00:00:00
+20,2024-01-17,2024-01-19,430193006,Sutura de herida,2 days 00:00:00
+19,2024-03-14,2024-03-18,233604007,Ecografía abdominal,4 days 00:00:00
+17,2024-03-27,2024-03-28,80146002,Cirugía de apendicitis,1 days 00:00:00
+24,2023-08-23,2023-08-30,233604007,Ecografía abdominal,7 days 00:00:00
+15,2024-05-29,2024-06-05,399439001,Cateterismo cardíaco,7 days 00:00:00
+5,2023-07-06,2023-07-12,80146002,Cirugía de apendicitis,6 days 00:00:00
+11,2024-11-29,2024-12-03,303893007,Resonancia magnética cerebral,4 days 00:00:00
+28,2024-10-01,2024-10-07,180325003,Vacunación contra la gripe,6 days 00:00:00
+10,2024-02-24,2024-02-27,303893007,Resonancia magnética cerebral,3 days 00:00:00
+28,2023-12-23,2023-12-29,241879003,Extracción de muela,6 days 00:00:00
+22,2023-06-26,2023-06-29,430193006,Sutura de herida,3 days 00:00:00
+30,2023-10-16,2023-10-22,241879003,Extracción de muela,6 days 00:00:00
+17,2025-03-03,2025-03-07,241879003,Extracción de muela,4 days 00:00:00
+25,2024-01-15,2024-01-21,399439001,Cateterismo cardíaco,6 days 00:00:00
+29,2024-12-18,2024-12-22,233604007,Ecografía abdominal,4 days 00:00:00
+27,2023-04-28,2023-04-30,80146002,Cirugía de apendicitis,2 days 00:00:00
+1,2024-01-27,2024-02-03,303893007,Resonancia magnética cerebral,7 days 00:00:00
+7,2025-02-17,2025-02-24,241879003,Extracción de muela,7 days 00:00:00
+15,2024-06-30,2024-07-05,241879003,Extracción de muela,5 days 00:00:00
+10,2024-10-12,2024-10-19,241879003,Extracción de muela,7 days 00:00:00
+2,2024-05-09,2024-05-12,387713003,Electrocardiograma,3 days 00:00:00
+24,2024-05-04,2024-05-06,48387007,Colonoscopía,2 days 00:00:00
+30,2023-10-17,2023-10-19,180325003,Vacunación contra la gripe,2 days 00:00:00
+27,2024-05-01,2024-05-05,303893007,Resonancia magnética cerebral,4 days 00:00:00
+37,2023-05-31,2023-06-07,399208008,Radiografía de tórax,7 days
+37,2022-07-13,2022-07-20,233604007,Ecografía abdominal,7 days
+39,2019-05-08,2019-05-12,241879003,Extracción de muela,4 days
+40,2019-09-26,2019-09-29,180325003,Vacunación contra la gripe,3 days
+41,2024-02-21,2024-02-26,241879003,Extracción de muela,5 days
+42,2023-05-03,2023-05-06,303893007,Resonancia magnética cerebral,3 days
+43,2018-11-05,2018-11-09,80146002,Cirugía de apendicitis,4 days
+43,2020-07-13,2020-07-20,48387007,Colonoscopía,7 days
+43,2017-06-01,2017-06-08,48387007,Colonoscopía,7 days
+46,2023-01-12,2023-01-17,387713003,Electrocardiograma,5 days
+48,2017-08-09,2017-08-15,241879003,Extracción de muela,6 days
+48,2020-07-17,2020-07-19,303893007,Resonancia magnética cerebral,2 days
+49,2016-03-28,2016-04-03,233604007,Ecografía abdominal,6 days
+49,2017-01-14,2017-01-17,399208008,Radiografía de tórax,3 days
+49,2018-12-02,2018-12-07,303893007,Resonancia magnética cerebral,5 days
+50,2024-03-20,2024-03-22,233604007,Ecografía abdominal,2 days
+50,2023-09-27,2023-10-02,387713003,Electrocardiograma,5 days
+51,2019-12-09,2019-12-12,430193006,Sutura de herida,3 days
+51,2020-01-07,2020-01-13,399208008,Radiografía de tórax,6 days
+51,2016-03-09,2016-03-15,387713003,Electrocardiograma,6 days
+53,2020-02-05,2020-02-08,430193006,Sutura de herida,3 days
+55,2018-03-06,2018-03-11,399439001,Cateterismo cardíaco,5 days
+56,2020-05-21,2020-05-24,80146002,Cirugía de apendicitis,3 days
+57,2023-09-24,2023-09-30,303893007,Resonancia magnética cerebral,6 days
+57,2016-01-02,2016-01-08,399208008,Radiografía de tórax,6 days
+59,2024-10-03,2024-10-10,399439001,Cateterismo cardíaco,7 days
+60,2019-05-12,2019-05-15,387713003,Electrocardiograma,3 days
+60,2020-04-15,2020-04-20,303893007,Resonancia magnética cerebral,5 days
+61,2018-08-18,2018-08-20,80146002,Cirugía de apendicitis,2 days
+61,2017-03-22,2017-03-28,80146002,Cirugía de apendicitis,6 days
+62,2022-03-30,2022-03-31,80146002,Cirugía de apendicitis,1 days
+62,2024-04-14,2024-04-20,180325003,Vacunación contra la gripe,6 days
+63,2023-06-09,2023-06-15,233604007,Ecografía abdominal,6 days
+64,2019-05-03,2019-05-05,399439001,Cateterismo cardíaco,2 days
+64,2016-03-18,2016-03-19,430193006,Sutura de herida,1 days
+64,2017-05-14,2017-05-21,241879003,Extracción de muela,7 days
+65,2017-05-06,2017-05-13,180325003,Vacunación contra la gripe,7 days
+66,2024-11-10,2024-11-14,180325003,Vacunación contra la gripe,4 days
+66,2016-12-21,2016-12-24,399208008,Radiografía de tórax,3 days
+67,2017-01-11,2017-01-16,241879003,Extracción de muela,5 days
+69,2023-10-04,2023-10-05,430193006,Sutura de herida,1 days
+71,2021-08-31,2021-09-06,430193006,Sutura de herida,6 days
+71,2023-03-07,2023-03-09,430193006,Sutura de herida,2 days
+73,2021-09-05,2021-09-09,241879003,Extracción de muela,4 days
+74,2020-03-19,2020-03-25,241879003,Extracción de muela,6 days
+74,2019-12-29,2020-01-01,48387007,Colonoscopía,3 days
+74,2020-08-10,2020-08-12,399208008,Radiografía de tórax,2 days
+78,2016-02-17,2016-02-19,233604007,Ecografía abdominal,2 days
+81,2019-06-04,2019-06-09,233604007,Ecografía abdominal,5 days
+82,2022-01-08,2022-01-12,399208008,Radiografía de tórax,4 days
+83,2023-07-21,2023-07-27,180325003,Vacunación contra la gripe,6 days
+84,2018-10-11,2018-10-15,387713003,Electrocardiograma,4 days
+84,2022-04-20,2022-04-26,233604007,Ecografía abdominal,6 days
+85,2018-07-01,2018-07-04,387713003,Electrocardiograma,3 days
+86,2018-11-19,2018-11-21,399439001,Cateterismo cardíaco,2 days
+88,2022-06-22,2022-06-24,399439001,Cateterismo cardíaco,2 days
+89,2019-03-18,2019-03-24,48387007,Colonoscopía,6 days
+89,2017-10-01,2017-10-07,303893007,Resonancia magnética cerebral,6 days
+90,2021-01-06,2021-01-08,48387007,Colonoscopía,2 days
+91,2021-07-17,2021-07-24,303893007,Resonancia magnética cerebral,7 days
+93,2017-10-03,2017-10-09,387713003,Electrocardiograma,6 days
+94,2023-03-27,2023-03-30,241879003,Extracción de muela,3 days
+97,2020-09-26,2020-10-02,241879003,Extracción de muela,6 days
+97,2023-03-29,2023-04-03,430193006,Sutura de herida,5 days
+99,2022-11-21,2022-11-25,241879003,Extracción de muela,4 days
+100,2023-03-26,2023-04-02,48387007,Colonoscopía,7 days
