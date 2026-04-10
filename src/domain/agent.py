@@ -1,9 +1,13 @@
+import json
+
 from langchain.agents import create_agent
 from langchain_community.utilities import SQLDatabase
 from langchain_core.prompts import PromptTemplate
-from langchain_core.tools import Tool
+from langchain_core.tools import tool
 from langchain_experimental.sql import SQLDatabaseChain
 from langchain_ollama import ChatOllama
+
+from src.persistance.avisador import enviar_mail, enviar_sms
 
 
 def get_agent_executor():
@@ -49,21 +53,35 @@ def get_agent_executor():
         llm, db, prompt=PROMPT_SQL, verbose=True, top_k=50, return_direct=True
     )
 
-    def buscar_cohorte_sql(query: str) -> str:
-        """Consulta la base de datos de pacientes. Introduce una pregunta en español."""
+    @tool("buscar_pacientes")
+    def buscar_pacientes(query: str) -> str:
+        """Busca información médica en la base de datos de pacientes crónicos. Pasa SIEMPRE un único argumento de texto con la pregunta clínica completa."""
         try:
             resultado = db_chain.invoke(query)
             return str(resultado["result"])
         except Exception as e:
             return f"Error en DB: No he podido realizar la consulta. Detalles: {str(e)}"
 
-    tools = [
-        Tool(
-            name="buscar_pacientes",
-            func=buscar_cohorte_sql,
-            description="Busca información médica en la base de datos de pacientes crónicos. Pasa SIEMPRE un único argumento de texto (string) con la pregunta clínica completa.",
-        )
-    ]
+    @tool("enviar_sms")
+    def enviar_sms_tool(numero: str, mensaje: str) -> str:
+        """Envía un mensaje SMS a un número de teléfono."""
+        try:
+            enviar_sms(numero, mensaje)
+            return f"SMS enviado a {numero}"
+        except Exception as e:
+            print(f"Error al enviar SMS: {str(e)}")
+            return f"Error al enviar SMS: {str(e)}"
+
+    @tool("enviar_mail")
+    def enviar_mail_tool(correos: str, mensaje: str) -> str:
+        """Envía un correo electrónico a uno o varios destinatarios. Pasa los correos separados por comas."""
+        try:
+            return enviar_mail(correos, mensaje)
+        except Exception as e:
+            print(f"Error al enviar mail: {str(e)}")
+            return f"Error al enviar correo: {str(e)}"
+
+    tools = [buscar_pacientes, enviar_sms_tool, enviar_mail_tool]
 
     system_prompt = """
     Eres un asistente médico experto en análisis de bases de datos de cohortes clínicas, dotado de razonamiento clínico avanzado. Tu objetivo es entender la intención del usuario, asistir en la formulación de consultas complejas y proporcionar respuestas precisas basadas en los datos.

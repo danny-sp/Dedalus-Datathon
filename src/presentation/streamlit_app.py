@@ -1,7 +1,7 @@
-import streamlit as st
-import re
 import json
-from datetime import datetime
+import re
+
+import streamlit as st
 
 from src.domain.agent import get_agent_executor
 
@@ -194,6 +194,7 @@ with st.sidebar:
 active_conversation = _get_active_conversation()
 messages = active_conversation["messages"]
 
+
 def render_content(content):
     """Extrae bloques JSON de Vega-Lite del contenido y los dibuja, mostrando el texto restante."""
     texto_pantalla = content
@@ -207,7 +208,7 @@ def render_content(content):
     texto_limpio = texto_pantalla.strip()
     if texto_limpio:
         st.markdown(texto_limpio)
-    
+
     # Iteramos sobre todos los JSON (gráficos) y los dibujamos
     for idx, json_str in enumerate(bloques_json):
         try:
@@ -216,6 +217,7 @@ def render_content(content):
         except json.JSONDecodeError:
             st.error(f"❌ El bloque JSON número {idx+1} para el gráfico no es válido.")
             st.code(json_str, language="json")
+
 
 # Mostrar el historial de chat existente
 for message in messages:
@@ -257,7 +259,7 @@ if prompt := st.chat_input("Escribe tu consulta médica aquí..."):
                 message = event["messages"][-1]
                 if message.type == "ai" and message.content:
                     respuesta_final = message.content
-            
+
             # Mostrar contenido (texto y gráficos) procesados adecuadamente
             render_content(respuesta_final)
 
