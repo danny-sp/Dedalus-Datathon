@@ -6,7 +6,7 @@ import streamlit as st
 
 from src.domain.agent import get_agent_executor
 
-st.set_page_config(page_title="Asistente Médico IA", page_icon=":material/local_hospital:", layout="centered")
+st.set_page_config(page_title="Asistente Médico IA", page_icon="assets/chismoso.png", layout="centered")
 
 st.title("Asistente Médico de Cohortes Clínicas")
 st.markdown(
