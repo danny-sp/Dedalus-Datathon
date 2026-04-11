@@ -18,6 +18,7 @@ def main():
         "cohorte_medicationes.csv",
         "cohorte_pacientes.csv",
         "cohorte_procedimientos.csv",
+        "doctores.csv",
     ]
 
     for archivo in archivos_csv:
