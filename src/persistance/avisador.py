@@ -15,10 +15,10 @@ def enviar_sms(numero: str, mensaje: str):
     # Aquí iría la lógica real para enviar el SMS, por ejemplo, usando una API de terceros.
 
 
-def enviar_mail(destinatarios_str: str, mensaje: str):
+def enviar_mail(destinatarios_str: str, mensaje: str, adjunto_pdf: str = None):
     """
     Envía un correo real a una lista de emails (separados por coma).
-    Útil para notificar a la cohorte identificada.
+    Útil para notificar a la cohorte identificada, con opción a adjuntar un PDF.
     """
     try:
         EMAIL_BOT = os.getenv("BOT_MAIL")
@@ -32,6 +32,16 @@ def enviar_mail(destinatarios_str: str, mensaje: str):
             msg["Subject"] = "Notificación Importante - Servicio de Salud"
             msg["From"] = EMAIL_BOT
             msg["To"] = correo
+
+            if adjunto_pdf and os.path.exists(adjunto_pdf):
+                with open(adjunto_pdf, "rb") as f:
+                    pdf_data = f.read()
+                msg.add_attachment(
+                    pdf_data,
+                    maintype="application",
+                    subtype="pdf",
+                    filename=os.path.basename(adjunto_pdf),
+                )
 
             with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
                 smtp.login(EMAIL_BOT, PASSWORD_BOT)

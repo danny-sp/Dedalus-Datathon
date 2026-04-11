@@ -8,6 +8,7 @@ from langchain_experimental.sql import SQLDatabaseChain
 from langchain_ollama import ChatOllama
 
 from src.persistance.avisador import enviar_mail, enviar_sms
+from src.persistance.generador_pdf import crear_pdf
 
 
 def get_agent_executor():
@@ -73,15 +74,20 @@ def get_agent_executor():
             return f"Error al enviar SMS: {str(e)}"
 
     @tool("enviar_mail")
-    def enviar_mail_tool(correos: str, mensaje: str) -> str:
-        """Envía un correo electrónico a uno o varios destinatarios. Pasa los correos separados por comas."""
+    def enviar_mail_tool(correos: str, mensaje: str, ruta_archivo: str = None) -> str:
+        """Envía un correo electrónico a uno o varios destinatarios. Pasa los correos separados por comas. El mensaje es el cuerpo del correo, y ruta_archivo es la ruta al PDF que quieres adjuntar (puede ser None si no hay adjunto)."""
         try:
-            return enviar_mail(correos, mensaje)
+            return enviar_mail(correos, mensaje, ruta_archivo)
         except Exception as e:
             print(f"Error al enviar mail: {str(e)}")
             return f"Error al enviar correo: {str(e)}"
 
-    tools = [buscar_pacientes, enviar_sms_tool, enviar_mail_tool]
+    @tool("guardar_pdf")
+    def guardar_pdf_tool(texto: str, nombre_archivo: str) -> str:
+        """Genera y guarda un documento PDF. El parámetro 'texto' DEBE estar en formato Markdown (usa # para títulos, ** para negrita, y el formato de tablas Markdown si hay datos tabulares)."""
+        return crear_pdf(texto, nombre_archivo)
+
+    tools = [buscar_pacientes, enviar_sms_tool, enviar_mail_tool, guardar_pdf_tool]
 
     system_prompt = """
     Eres un asistente médico experto en análisis de bases de datos de cohortes clínicas, dotado de razonamiento clínico avanzado. Tu objetivo es entender la intención del usuario, asistir en la formulación de consultas complejas y proporcionar respuestas precisas basadas en los datos.
