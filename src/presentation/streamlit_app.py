@@ -6,7 +6,7 @@ import streamlit as st
 
 from src.domain.agent import get_agent_executor
 
-st.set_page_config(page_title="Asistente Médico IA", page_icon="🏥", layout="centered")
+st.set_page_config(page_title="Asistente Médico IA", page_icon=":material/local_hospital:", layout="centered")
 
 st.title("Asistente Médico de Cohortes Clínicas")
 st.markdown(
@@ -141,7 +141,7 @@ st.markdown(
 with st.sidebar:
     st.subheader("Historial de conversaciones")
 
-    if st.button("+ Nueva conversación", use_container_width=True):
+    if st.button("Nueva conversación", icon=":material/add:", use_container_width=True):
         new_id = f"conv_{len(st.session_state.conversations) + 1}"
         st.session_state.conversations.append(
             {
@@ -159,7 +159,7 @@ with st.sidebar:
     st.caption("Organiza tus chats en carpetas")
     with st.form("new_folder_form", clear_on_submit=True):
         new_folder_name = st.text_input("Nueva carpeta", placeholder="Ej: Alergias")
-        if st.form_submit_button("Crear carpeta", use_container_width=True):
+        if st.form_submit_button("Crear carpeta", icon=":material/create_new_folder:", use_container_width=True):
             folder_name = new_folder_name.strip()
             existing_names = {f["name"].lower() for f in st.session_state.folders}
             if folder_name and folder_name.lower() not in existing_names:
@@ -190,11 +190,11 @@ with st.sidebar:
 
     col_up, col_down = st.columns(2)
     with col_up:
-        if st.button("Subir", use_container_width=True):
+        if st.button("Subir", icon=":material/arrow_upward:", use_container_width=True):
             _move_active_conversation(-1)
             st.rerun()
     with col_down:
-        if st.button("Bajar", use_container_width=True):
+        if st.button("Bajar", icon=":material/arrow_downward:", use_container_width=True):
             _move_active_conversation(1)
             st.rerun()
 
@@ -224,7 +224,7 @@ with st.sidebar:
                         st.session_state.active_conversation_id = conv["id"]
                         st.rerun()
                 with col_del:
-                    if st.button("🗑️", key=f"del_{conv['id']}", help="Eliminar conversación"):
+                    if st.button("", icon=":material/delete:", key=f"del_{conv['id']}", help="Eliminar conversación"):
                         _delete_conversation(conv["id"])
                         st.rerun()
     st.markdown("</div>", unsafe_allow_html=True)
@@ -253,7 +253,7 @@ def render_content(content):
             vega_dict = json.loads(json_str)
             st.vega_lite_chart(vega_dict, use_container_width=True)
         except json.JSONDecodeError:
-            st.error(f"❌ El bloque JSON número {idx+1} para el gráfico no es válido.")
+            st.error(f"El bloque JSON número {idx+1} para el gráfico no es válido.", icon=":material/error:")
             st.code(json_str, language="json")
 
 
