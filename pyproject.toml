@@ -25,6 +25,7 @@ dependencies = [
     "langchain-ollama>=1.1.0",
     "langchain-openai",
     "langgraph>=1.1.6",
+    "markdown>=3.10.2",
     "matplotlib>=3.10.8",
     "pandas>=2.3.3",
     "sqlalchemy>=2.0.49",
