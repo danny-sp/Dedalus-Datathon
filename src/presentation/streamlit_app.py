@@ -1,14 +1,13 @@
 import json
 import os
 import re
-import io
 from datetime import datetime
 
 import streamlit as st
 
 from src.domain.agent import get_agent_executor
 from src.persistance.avisador import enviar_mail
-from src.presentation.components.voice import render_tts_component, render_stt_component
+from src.presentation.components.voice import render_stt_component, render_tts_component
 
 st.set_page_config(
     page_title="Asistente Médico IA", page_icon="assets/chismoso.png", layout="centered"
@@ -20,7 +19,7 @@ st.markdown(
 )
 
 
-# Cacheamos la carga de la base de datos, llm y agente para no iniciarlos en cada interacción
+# Cacheamos la carga del agente, llm y agente para no iniciarlos en cada interacción
 @st.cache_resource
 def load_agent():
     return get_agent_executor()
@@ -41,11 +40,13 @@ def reportar_incidencia_dialog():
     if st.button("Enviar", use_container_width=True, type="primary"):
         if comentario.strip():
             log_path = None
-            if "log_filename" in st.session_state and os.path.exists(st.session_state.log_filename):
+            if "log_filename" in st.session_state and os.path.exists(
+                st.session_state.log_filename
+            ):
                 log_path = st.session_state.log_filename
-            
+
             cuerpo_correo = f"=== REPORTE DE INCIDENCIA ===\n\nComentario proporcionado:\n{comentario}"
-            
+
             try:
                 res = enviar_mail(email_destino, cuerpo_correo, adjunto_path=log_path)
                 st.success(f"Reporte enviado. Detalles: {res}")
@@ -332,23 +333,37 @@ for i, message in enumerate(messages):
     with st.chat_message(message["role"]):
         if message["role"] == "assistant":
             render_content(message["content"])
-            
+
             # Ancla invisible para inyectar nuestro botón TTS nativo mediante JS
-            st.markdown(f'<div id="tts-anchor-{i}" style="display: flex; justify-content: flex-end; margin-top: -10px;"></div>', unsafe_allow_html=True)
-            
+            st.markdown(
+                f'<div id="tts-anchor-{i}" style="display: flex; justify-content: flex-end; margin-top: -10px;"></div>',
+                unsafe_allow_html=True,
+            )
+
             # Preparar el texto limpio para JS
-            texto_legible = re.sub(r"```json\s*.*?\s*```", "", message["content"], flags=re.DOTALL)
-            
+            texto_legible = re.sub(
+                r"```json\s*.*?\s*```", "", message["content"], flags=re.DOTALL
+            )
+
             # 1. Eliminar tablas (borrar líneas que contengan '|' que es característico de Markdown tables)
-            texto_legible = "\n".join([line for line in texto_legible.split('\n') if "|" not in line])
-            
+            texto_legible = "\n".join(
+                [line for line in texto_legible.split("\n") if "|" not in line]
+            )
+
             # 2. Eliminar emojis y caracteres especiales, dejando solo texto y puntuación leíble
-            texto_legible = re.sub(r'[^\w\s.,;:!?¡¿áéíóúÁÉÍÓÚñÑüÜ()+\-$€%]', ' ', texto_legible)
-            
+            texto_legible = re.sub(
+                r"[^\w\s.,;:!?¡¿áéíóúÁÉÍÓÚñÑüÜ()+\-$€%]", " ", texto_legible
+            )
+
             # 3. Limpiar espacios extra
-            texto_legible = re.sub(r'\s+', ' ', texto_legible).strip()
+            texto_legible = re.sub(r"\s+", " ", texto_legible).strip()
             if texto_legible:
-                safe_text = texto_legible.replace("'", "\\'").replace("\n", " ").replace("\r", " ").replace('"', '\\"')
+                safe_text = (
+                    texto_legible.replace("'", "\\'")
+                    .replace("\n", " ")
+                    .replace("\r", " ")
+                    .replace('"', '\\"')
+                )
                 tts_data[i] = safe_text
         else:
             st.markdown(message["content"])
@@ -363,9 +378,7 @@ prompt = st.chat_input("Escribe tu consulta médica aquí...")
 # Inyectamos script JS para añadir el botón de micrófono nativamente al chat_input
 render_stt_component()
 
-final_user_input = prompt
-
-if final_user_input:
+if prompt:
     # Agregar la pregunta al historial y mostrarla
     log_message("user", prompt)
     messages.append({"role": "user", "content": prompt})
@@ -378,7 +391,7 @@ if final_user_input:
         )
 
     with st.chat_message("user"):
-        st.markdown(final_user_input)
+        st.markdown(prompt)
 
     # Contenedor para mostrar la respuesta en progreso o spinner
     with st.chat_message("assistant"):
@@ -399,7 +412,7 @@ if final_user_input:
 
             # Mostrar contenido
             render_content(respuesta_final)
-            
+
     # Agregar la respuesta original del agente al historial de sesión
     log_message("assistant", respuesta_final)
 
