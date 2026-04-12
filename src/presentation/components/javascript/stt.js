@@ -1,6 +1,14 @@
 setInterval(function() {
     const parentDoc = window.parent.document;
-    if (parentDoc.getElementById('custom-mic-btn')) return; // already exists
+    
+    let existingBtn = parentDoc.getElementById('custom-mic-btn');
+    if (existingBtn) {
+        if (existingBtn._myIframe === window) {
+            return; // Already exists and is owned by THIS iframe
+        }
+        // It was created by a previous iframe (now dead), so remove it
+        existingBtn.remove();
+    }
     
     // Find the chat input container
     const chatInputContainer = parentDoc.querySelector('[data-testid="stChatInput"]');
@@ -13,6 +21,7 @@ setInterval(function() {
     
     const micBtn = parentDoc.createElement("button");
     micBtn.id = 'custom-mic-btn';
+    micBtn._myIframe = window;
     micBtn.innerHTML = `
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
             <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" fill="currentColor"/>

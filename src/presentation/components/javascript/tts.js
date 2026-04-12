@@ -15,9 +15,18 @@ setInterval(function() {
     
     for (const [i, text] of Object.entries(ttsData)) {
         const anchor = parentDoc.getElementById('tts-anchor-' + i);
-        if (anchor && !anchor.hasChildNodes()) {
-            const btn = parentDoc.createElement('button');
+        if (anchor) {
+            let btn = anchor.querySelector('.tts-custom-btn');
+            if (btn) {
+                if (btn._myIframe === window) {
+                    continue; // Button is alive and owned by this iframe
+                }
+                btn.remove(); // Button belongs to dead iframe, trash it
+            }
+            
+            btn = parentDoc.createElement('button');
             btn.className = "tts-custom-btn";
+            btn._myIframe = window;
             btn.innerHTML = speakerSvg;
             btn.title = "Escuchar respuesta";
             btn.dataset.playing = "false";
