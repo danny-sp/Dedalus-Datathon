@@ -1,10 +1,12 @@
 import json
 import re
+import io
 from datetime import datetime
 
 import streamlit as st
 
 from src.domain.agent import get_agent_executor
+from src.presentation.components.voice import render_tts_component, render_stt_component
 
 st.set_page_config(page_title="Asistente Médico IA", page_icon="assets/chismoso.png", layout="centered")
 
@@ -258,17 +260,48 @@ def render_content(content):
 
 
 # Mostrar el historial de chat existente
-for message in messages:
+tts_data = {}
+
+for i, message in enumerate(messages):
     with st.chat_message(message["role"]):
         if message["role"] == "assistant":
             render_content(message["content"])
+            
+            # Ancla invisible para inyectar nuestro botón TTS nativo mediante JS
+            st.markdown(f'<div id="tts-anchor-{i}" style="display: flex; justify-content: flex-end; margin-top: -10px;"></div>', unsafe_allow_html=True)
+            
+            # Preparar el texto limpio para JS
+            texto_legible = re.sub(r"```json\s*.*?\s*```", "", message["content"], flags=re.DOTALL)
+            
+            # 1. Eliminar tablas (borrar líneas que contengan '|' que es característico de Markdown tables)
+            texto_legible = "\n".join([line for line in texto_legible.split('\n') if "|" not in line])
+            
+            # 2. Eliminar emojis y caracteres especiales, dejando solo texto y puntuación leíble
+            texto_legible = re.sub(r'[^\w\s.,;:!?¡¿áéíóúÁÉÍÓÚñÑüÜ()+\-$€%]', ' ', texto_legible)
+            
+            # 3. Limpiar espacios extra
+            texto_legible = re.sub(r'\s+', ' ', texto_legible).strip()
+            if texto_legible:
+                safe_text = texto_legible.replace("'", "\\'").replace("\n", " ").replace("\r", " ").replace('"', '\\"')
+                tts_data[i] = safe_text
         else:
             st.markdown(message["content"])
 
-# Entrada de usuario
-if prompt := st.chat_input("Escribe tu consulta médica aquí..."):
+# Renderizar componente de Texto a Voz (TTS)
+render_tts_component(tts_data)
+
+# --- Lógica de Entrada de Usuario (STT integrado nativamente en chat bar vía JS) ---
+
+prompt = st.chat_input("Escribe tu consulta médica aquí...")
+
+# Inyectamos script JS para añadir el botón de micrófono nativamente al chat_input
+render_stt_component()
+
+final_user_input = prompt
+
+if final_user_input:
     # Agregar la pregunta al historial y mostrarla
-    messages.append({"role": "user", "content": prompt})
+    messages.append({"role": "user", "content": final_user_input})
 
     default_title = active_conversation["title"].startswith("Conversación ")
     if default_title:
@@ -278,12 +311,11 @@ if prompt := st.chat_input("Escribe tu consulta médica aquí..."):
         )
 
     with st.chat_message("user"):
-        st.markdown(prompt)
+        st.markdown(final_user_input)
 
     # Contenedor para mostrar la respuesta en progreso o spinner
     with st.chat_message("assistant"):
         with st.spinner("Consultando la base de datos de pacientes..."):
-            # Enviar solo los últimos N mensajes para no saturar la memoria del modelo ni ralentizarlo
             MAX_MENSAJES = 10
             historial_mensajes = [
                 (msg["role"], msg["content"]) for msg in messages[-MAX_MENSAJES:]
@@ -293,13 +325,13 @@ if prompt := st.chat_input("Escribe tu consulta médica aquí..."):
 
             # Ejecutar el agente y guardar la respuesta
             for event in agent_executor.stream(inputs, stream_mode="values"):
-                # Asumo que event["messages"][-1] trae AIMessage Chunk o entero
                 message = event["messages"][-1]
                 if message.type == "ai" and message.content:
                     respuesta_final = message.content
 
-            # Mostrar contenido (texto y gráficos) procesados adecuadamente
+            # Mostrar contenido
             render_content(respuesta_final)
-
+            
     # Agregar la respuesta original del agente al historial de sesión
     messages.append({"role": "assistant", "content": respuesta_final})
+    st.rerun()  # Rerun para integrar permanentemente la respuesta y mostrar controles (ej. TTS)
