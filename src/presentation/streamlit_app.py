@@ -272,7 +272,15 @@ for i, message in enumerate(messages):
             
             # Preparar el texto limpio para JS
             texto_legible = re.sub(r"```json\s*.*?\s*```", "", message["content"], flags=re.DOTALL)
-            texto_legible = re.sub(r"[#*_\[\]]", "", texto_legible).strip()
+            
+            # 1. Eliminar tablas (borrar líneas que contengan '|' que es característico de Markdown tables)
+            texto_legible = "\n".join([line for line in texto_legible.split('\n') if "|" not in line])
+            
+            # 2. Eliminar emojis y caracteres especiales, dejando solo texto y puntuación leíble
+            texto_legible = re.sub(r'[^\w\s.,;:!?¡¿áéíóúÁÉÍÓÚñÑüÜ()+\-$€%]', ' ', texto_legible)
+            
+            # 3. Limpiar espacios extra
+            texto_legible = re.sub(r'\s+', ' ', texto_legible).strip()
             if texto_legible:
                 safe_text = texto_legible.replace("'", "\\'").replace("\n", " ").replace("\r", " ").replace('"', '\\"')
                 tts_data[i] = safe_text
