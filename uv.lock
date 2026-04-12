@@ -880,6 +880,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "black" },
     { name = "faker" },
+    { name = "fpdf" },
     { name = "gtts" },
     { name = "ipykernel" },
     { name = "isort" },
@@ -904,6 +905,7 @@ dependencies = [
 requires-dist = [
     { name = "black", specifier = ">=26.3.1" },
     { name = "faker", specifier = ">=40.13.0" },
+    { name = "fpdf", specifier = ">=1.7.2" },
     { name = "gtts", specifier = ">=2.5.4" },
     { name = "ipykernel", specifier = ">=7.2.0" },
     { name = "isort", specifier = ">=8.0.1" },
@@ -1039,6 +1041,12 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/13/6f/ae9c4e4dd417948407b680855c2c7790efb52add6009aaecff1e3bc50e8e/fonttools-4.62.1-cp314-cp314t-win_amd64.whl", hash = "sha256:59b372b4f0e113d3746b88985f1c796e7bf830dd54b28374cd85c2b8acd7583e", size = 2414147, upload-time = "2026-03-13T13:54:19.416Z" },
     { url = "https://files.pythonhosted.org/packages/fd/ba/56147c165442cc5ba7e82ecf301c9a68353cede498185869e6e02b4c264f/fonttools-4.62.1-py3-none-any.whl", hash = "sha256:7487782e2113861f4ddcc07c3436450659e3caa5e470b27dc2177cade2d8e7fd", size = 1152647, upload-time = "2026-03-13T13:54:22.735Z" },
 ]
+
+[[package]]
+name = "fpdf"
+version = "1.7.2"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/37/c6/608a9e6c172bf9124aa687ec8b9f0e8e5d697d59a5f4fad0e2d5ec2a7556/fpdf-1.7.2.tar.gz", hash = "sha256:125840783289e7d12552b1e86ab692c37322e7a65b96a99e0ea86cca041b6779", size = 39504, upload-time = "2015-01-21T00:07:47.493Z" }
 
 [[package]]
 name = "frozenlist"
