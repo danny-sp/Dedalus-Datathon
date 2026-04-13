@@ -330,7 +330,8 @@ def log_message(role, content):
 tts_data = {}
 
 for i, message in enumerate(messages):
-    with st.chat_message(message["role"]):
+    avatar = "assets/chismoso_lowres.png" if message["role"] == "assistant" else None
+    with st.chat_message(message["role"], avatar=avatar):
         if message["role"] == "assistant":
             render_content(message["content"])
 
@@ -394,7 +395,7 @@ if prompt:
         st.markdown(prompt)
 
     # Contenedor para mostrar la respuesta en progreso o spinner
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar="assets/chismoso_lowres.png"):
         with st.spinner("Chismoso está pensando..."):
             # Enviar solo los últimos N mensajes para no saturar la memoria del modelo ni ralentizarlo
             MAX_MENSAJES = 10
