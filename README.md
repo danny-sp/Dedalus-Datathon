@@ -34,6 +34,7 @@ El agente utiliza modelos de lenguaje locales mediatos por **Ollama**. Es necesa
 
 ```bash
 uv sync
+uv pip install fpdf2
 ```
 
 ### Usando `pip`
@@ -43,6 +44,7 @@ python -m venv .venv
 source .venv/bin/activate  # o .venv\Scripts\activate en Windows
 
 pip install -e .
+pip install fpdf2
 ```
 
 ## Inicialización de Base de Datos

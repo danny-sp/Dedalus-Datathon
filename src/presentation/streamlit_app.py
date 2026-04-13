@@ -10,7 +10,7 @@ from src.persistance.avisador import enviar_mail
 from src.presentation.components.voice import render_stt_component, render_tts_component
 
 st.set_page_config(
-    page_title="Asistente Médico IA", page_icon="assets/chismoso.png", layout="centered"
+    page_title="Asistente Médico IA", page_icon="assets/chismoso.png", layout="wide"
 )
 
 st.title("Asistente Médico de Cohortes Clínicas")
