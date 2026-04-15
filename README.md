@@ -1,9 +1,19 @@
-# Dedalus-Datathon - Asistente Médico IA
+# Dedalus Datathon - Asistente Médico IA: Chismoso!
 
-Repositorio para Datathon de Dedalus 2026 CLM: https://www.dedalushackathon.com/dedalus-datathon-castilla-la-mancha-2026/
+Proyecto ganador de la Datathon de Dedalus 2026 CLM: https://www.dedalushackathon.com/dedalus-datathon-castilla-la-mancha-2026/
 
-Este proyecto implementa un agente conversacional inteligente capaz de realizar consultas precisas a una base de datos de historia clínica, asistido por una capa de metacognición para comprender conceptos clínicos complejos.
+Este proyecto implementa un agente conversacional inteligente capaz de realizar consultas precisas a una base de datos de historia clínica, asistido por una capa de metacognición para comprender conceptos clínicos complejos y procesar de múltiples maneras los datos consultados.
 
+Puedes echarle un vistazo a la [presentación usada en el evento](https://canva.link/xj804mlbv938cid).
+## Autores y Contacto
+
+**Belén Huertas Ruiz** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bel%C3%A9n-huertas-ruiz/)
+
+**Carlos Naranjo Calderón** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlos-naranjo-calder%C3%B3n/) [![Portfolio](https://img.shields.io/badge/Portfolio-255E63?style=flat)](https://v0-carlosnaranjo.vercel.app/)
+
+**Daniel Sánchez Castro** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniel-s%C3%A1nchez-castro-961157314/)
+
+**Lucía Sánchez-Chiquito Gómez** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/luc%C3%ADa-s%C3%A1nchez-chiquito-g%C3%B3mez-589830340/)
 ## Requisitos Previos: Instalación de Ollama
 
 El agente utiliza modelos de lenguaje locales mediatos por **Ollama**. Es necesario tenerlo instalado y descargar el modelo específico utilizado por el proyecto (`kimi-k2.5:cloud`). Puedes usar cualquier otro modelo descargado cambiando el parametro `model` en `agent.py`.
